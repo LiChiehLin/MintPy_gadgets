@@ -63,8 +63,9 @@ python Restore_PB.py -d /data/project/mintpy/inputs/ifgramStack.h5
 ```
 ---
 ### Example:
-#### Check_profile.py 
 Before profile bridging  
+![Before correction](https://github.com/LiChiehLin/MintPy_gadgets/blob/1bc0f8d03b564b8adca68319dc398f9ff2d18270/Figures/Unwrap_Error.png)
 
 
 After profile bridging
+![After correction](https://github.com/LiChiehLin/MintPy_gadgets/blob/1bc0f8d03b564b8adca68319dc398f9ff2d18270/Figures/Unwrap_Error_Profile_Bridged.png)

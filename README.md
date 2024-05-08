@@ -5,4 +5,4 @@ Supplementary tools for MintPy
 - Produce surface velocity and their corresponding uncertainty within desired time span
 
 ###### unwrap_error_bridging
-- Perform bridging unwrap error correction technique with profiling
+- Perform bridging unwrap error correction technique to bridge two unwrapped phase at different connect component

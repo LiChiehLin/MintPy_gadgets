@@ -49,6 +49,7 @@ Check the input profile and visualize it
 1. Use `Check_profile.py` first to see if the profile runs through the place you want
 2. Use `Profile_Bridging.py` without the key `--fix` to check the detected pairs and corresponding connect components
 3. Use `Profile_Bridging.py` with `--fix`, `--save` to perform profile bridging.
+4. Use `Restore_PB.py` to restore original unwrapped phase if the bridging is not satisfactory
 ```python
 # Check the profile
 python Check_profile.py -d /data/project/mintpy/inputs/ifgramStack.h5 -p 1 -ps 2000 2000 -pe 5000 2000

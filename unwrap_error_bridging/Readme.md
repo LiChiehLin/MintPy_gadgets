@@ -29,7 +29,8 @@ Perform the profile bridging technique to .h5 dataset `unwrapPhase`
 Restore the previous profile bridging results to .h5 dataset `unwrapPhase` if the last one was not satisfactory
 * Required:
   * -d: Data: The absolute path of `ifgramStack.h5`
-
+* Optional:
+  * -p: Pair: The desired pair[s] that want to be restored
 ##
 ### Check_profile.py
 Check the input profile and visualize it
@@ -49,7 +50,7 @@ Check the input profile and visualize it
 2. Use `Profile_Bridging.py` without the key `--fix` to check the detected pairs and corresponding connect components
 3. Use `Profile_Bridging.py` with `--fix`, `--save` to perform profile bridging.
 ```python
-# Check the profile.
+# Check the profile
 python Check_profile.py -d /data/project/mintpy/inputs/ifgramStack.h5 -p 1 -ps 2000 2000 -pe 5000 2000
 
 # Check the detected pairs and connect components
@@ -58,8 +59,11 @@ python Profile_Bridging.py -d /data/project/mintpy/inputs/ifgramStack.h5 -ps 200
 # Start profile bridging 
 python Profile_Bridging.py -d /data/project/mintpy/inputs/ifgramStack.h5 -ps 2000 2000 -pe 5000 2000 --fix --save
 
-# If the previous profile bridging is bad, run:
+# If the previous profile bridging is bad, run (This will restore each and every pair):
 python Restore_PB.py -d /data/project/mintpy/inputs/ifgramStack.h5
+# If you only want to restore a few pairs that you want, run (e.g. pair 1 5 8 12):
+python Restore_PB.py -d /data/project/mintpy/inputs/ifgramStack.h5 -p 1 5 8 12
+
 ```
 ---
 ### Example:

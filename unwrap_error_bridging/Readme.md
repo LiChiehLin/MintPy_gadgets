@@ -15,11 +15,13 @@ Perform the profile bridging technique to .h5 dataset `unwrapPhase`
 #### Note that the unwrapped phase in the connect component at the end of the profile will be shifted to match the unwrapped phase at the front profile. So if you got a reversed fixing, try run `Restore_PB.py` to restore the previous results and reverse your profile
 * Required:
   * -d: Data: The absolute path of `ifgramStack.h5`
-  * -ps: ProfileStart: Starting point of the profile.
-  * -pe: ProfileEnd: Ending point of the profile.
+  * -ps: ProfileStart: Starting point of the profile. **[Row Col]**
+  * -pe: ProfileEnd: Ending point of the profile. **[Row Col]**
   * -ss: SearchStep: Searching step along the profile. 
 * Optional:
   * -p: Pairs: Indices of pairs to bridge.
+  * -c: Connect component: Force the routine to fix the 1 ifgram pair of these two input connect components. **[Front connComp, Back connComp]**
+  * -rc: Reference connect component: Use the reference connect component area to fix other ifgram pairs **[ifgram pair, Front connComp, Back connComp]**
   * --save: Save figure to where `ifgramStack.h5` is. Leave blank for the plotting the figures
   * --fix: Bridge unwrapped phase. Leave blank for no fixing, just checking the corresponding connect components and pairs
   * --overwrite: Overwrite the dataset `unwrapPhase` in `ifgramStack.h5`
@@ -55,10 +57,16 @@ Check the input profile and visualize it
 python Check_profile.py -d /data/project/mintpy/inputs/ifgramStack.h5 -p 1 -ps 2000 2000 -pe 5000 2000
 
 # Check the detected pairs and connect components
-python Profile_Bridging.py -d /data/project/mintpy/inputs/ifgramStack.h5 -ps 2000 2000 -pe 5000 2000
+python Profile_Bridging.py -d /data/project/mintpy/inputs/ifgramStack.h5 -ps 2000 2000 -pe 5000 2000 -ss 100
 
 # Start profile bridging 
-python Profile_Bridging.py -d /data/project/mintpy/inputs/ifgramStack.h5 -ps 2000 2000 -pe 5000 2000 --fix --save
+python Profile_Bridging.py -d /data/project/mintpy/inputs/ifgramStack.h5 -ps 2000 2000 -pe 5000 2000 -ss 100 --fix --save
+# Bridge the input pair with the input connect component (-c must be used with 1 and only 1 -p) 
+python Profile_Bridging.py -d /data/project/mintpy/inputs/ifgramStack.h5 -ps 2000 2000 -pe 5000 2000 -ss 100 -p 1 -c 2 12 --fix --save
+# Use a reference connect component to fix for other ifgram pairs (ifgram pair 37 with connect component 6 1 are the reference)
+python Profile_Bridging.py -d /data/project/mintpy/inputs/ifgramStack.h5 -ps 2000 2000 -pe 5000 2000 -ss 100 -p 1 2 8 15 -rc 37 6 1 --fix --save
+# Use a reference connect component to fix for all ifgram pairs (ifgram pair 37 with connect component 6 1 are the reference)
+python Profile_Bridging.py -d /data/project/mintpy/inputs/ifgramStack.h5 -ps 2000 2000 -pe 5000 2000 -ss 100 -rc 37 6 1 --fix --save
 
 # If the previous profile bridging is bad, run (This will restore each and every pair):
 python Restore_PB.py -d /data/project/mintpy/inputs/ifgramStack.h5

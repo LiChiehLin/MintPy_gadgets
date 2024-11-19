@@ -29,7 +29,7 @@ EndT = 20221117;
 ```
 #### Output as grd
 ```MatLab
-grdwrite2(Lon,Lat,Out(:,:,1))
+grdwrite2(Lon,Lat,Out(:,:,1),'filename.grd')
 ```
 ---
 Note that since `MintPy` is built on Python, there exists a little difference due to how Matlab and Python treat decimal values differently.  

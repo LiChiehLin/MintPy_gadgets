@@ -53,8 +53,8 @@ switch nargin
         disp(strcat('* h5 timeseries file:',32,h5TS))
         disp(strcat('* Temporal coherence mask file:',32,h5TempMask))
         disp('* Subset bounding box:')
-        disp('------------------------------------------')
         disp(Bbox)
+        disp('------------------------------------------')
         flag = 3;
         outname = strcat(TSname,'_masked_subset.txt');
     otherwise

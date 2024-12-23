@@ -22,7 +22,7 @@ The output text file is in the format shown below (displacement unit should be i
 | 120.1 | 23.2 | 0 | 0.02  | 0.03  | 0.04  | ...  | 0.23  |
 | ... | ... | ... | ...  | ...  | ...  | ...  | ...  |
 
-Each row is the displacement history of 1 pixel.
+Each row is the displacement history of that pixel.
 
 ---
 

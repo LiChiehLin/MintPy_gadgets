@@ -63,7 +63,7 @@ if ($SAT == 'sentinel' || $SAT == 'Sentinel') then
   echo "" >> config_stack.cfg
   echo "######## 2. Set ISCE2 topsStack parameters" >> config_stack.cfg
   echo "# See stackSentinel.py -h for detailed explanation. The variables are the same as stackSentinel.py" >> config_stack.cfg
-  echo "# Leave blank to use the default value from ISCE" >> config_stack.cfg
+  echo "# auto the default value from ISCE" >> config_stack.cfg
   echo "" >> config_stack.cfg
   echo "### Basic options:" >> config_stack.cfg
   echo "POLARIZATION = auto" >> config_stack.cfg

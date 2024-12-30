@@ -47,18 +47,18 @@ if ($SAT == 'sentinel' || $SAT == 'Sentinel') then
   echo "######## 1. Set directories" >> config_stack.cfg
   echo "### Put the directories for SLCs and orbits" >> config_stack.cfg
   echo "# [Directory of SLCs. e.g. /data/SLC]" >> config_stack.cfg
-  echo "SLC_dir   = auto"   >> config_stack.cfg
+  echo "SLC_dir     = auto"   >> config_stack.cfg
   echo "# [Directory of Orbits. e.g. /data/Orbits]" >> config_stack.cfg
-  echo "Orbit_dir = auto" >> config_stack.cfg
+  echo "Orbit_dir   = auto" >> config_stack.cfg
   echo "### Put the directory and name of DEM" >> config_stack.cfg
   echo "# [Path to DEM in use. e.g. /data/DEM/dem.wgs84]" >> config_stack.cfg
-  echo "DEM_path      = auto" >> config_stack.cfg
+  echo "DEM_path    = auto" >> config_stack.cfg
   echo "### Put the directory of auxillary file for Sentinel" >> config_stack.cfg
   echo "# [Directory of the auxillary files. e.g. /data/aux_cal]" >> config_stack.cfg
-  echo "AUX_dir  = auto" >> config_stack.cfg
+  echo "AUX_dir     = auto" >> config_stack.cfg
   echo "### Put the directory of where topsStack runfiles will be executed" >> config_stack.cfg
   echo "# [Directory of the working directory. e.g. /data/topsStack]" >> config_stack.cfg
-  echo "Work_dir = auto" >> config_stack.cfg
+  echo "Work_dir    = auto" >> config_stack.cfg
   echo "" >> config_stack.cfg
   echo "" >> config_stack.cfg
   echo "######## 2. Set ISCE2 topsStack parameters" >> config_stack.cfg

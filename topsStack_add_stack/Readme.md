@@ -46,7 +46,9 @@ csh pop_stack_config.csh
   - Download `config_stack.cfg` from this repository to your current working direcotry
   - Execute `pop_stack_config.csh` to generate a template configuration file
 ```console
-csh pop_stack_config.csh
+csh pop_stack_config.csh sentinel
+# or
+csh pop_stack_config.csh Sentinel
 ```
 
 There are 3 sections in the configuration file:  

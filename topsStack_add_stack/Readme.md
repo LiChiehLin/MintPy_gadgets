@@ -61,13 +61,14 @@ New_start_date = 20240913
 ```
 
 ### Section 1: Directories
-Put the directories of `SLCs`, `Orbits`, the `path/dem`, `auxiliary file`, and the `working directory` to the corresponding variables
+Put the directories of `SLCs`, `Orbits`, the `path/dem`, `auxiliary file`, and the `working directory` to the corresponding variables  
+Use double-quotes ""
 ```cfg
-SLC_dir   = SLC
-Orbit_dir = Orbit
-DEM_path  = DEM/demLat_N22_N26_Lon_E120_E123.dem.wgs84
-AUX_dir   = AUX
-Work_dir  = topsStack
+SLC_dir   = "SLC"
+Orbit_dir = "Orbit"
+DEM_path  = "DEM/demLat_N22_N26_Lon_E120_E123.dem.wgs84"
+AUX_dir   = "AUX"
+Work_dir  = "topsStack"
 ```
 
 ### Section 2: ISCE topsStack parameters
@@ -141,6 +142,13 @@ If `Add_new_stack = yes` then see below:
 
 
 ## 3.2. Arrange results with Add_new_stack_MintPy.csh
+Remember to put the `REFERENCE_DATE` so that every new SLC is coregistered with the same reference SLC.
+```cfg
+### Coregistration options:
+# e.g. 20240808
+REFERENCE_DATE          = auto # yyyymmdd
+```
+
 Make symbolic links to either a `new shared folder` or the `original timeseries folder`  
 This routine also runs `prep_isce.py` to the added stack for MintPy.  
 
